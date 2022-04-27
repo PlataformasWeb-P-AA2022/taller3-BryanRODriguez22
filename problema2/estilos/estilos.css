@@ -1,0 +1,12 @@
+
+.bigBox{
+    overflow: hidden;
+    height: 30em;
+    width: 20em;
+}
+.littleBox{
+    float: right;
+    margin-top: -225px;
+    margin-left: 175px;
+
+}

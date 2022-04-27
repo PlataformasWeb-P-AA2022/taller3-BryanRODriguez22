@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Problema2</title>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script>
@@ -17,25 +17,29 @@
 </head>
 <body>
     <div class="bigBox">
-      <p>Nombre: <br><br> <input type="text"  id="Nombre"> </p>
-      <p>Apellido: <br><br> <input type="text"  id="Apellido"> </p>
-      <p>Fecha de Nacimiento: <br><br> <input type="text" id="datepicker"></p>
+      <p>Nombre: <br></p>
+        <input type="text" id="Nombre">
+      <p>Apellido: <br></p>
+        <input type="text"  id="Apellido"> 
+      <p>Fecha de Nacimiento: <br></p> 
+        <input type="text" id="datepicker"><br><br>
       <button type="submit">Generar Mensaje</button>
+    <div class="littleBox">
+      <p id="salida">
+      <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            var nombre = $('#Nombre').val();
+            var apellido = $('#Apellido').val();
+            var fecha = $('#datepicker').val();
+            $('#salida').append("<h3>Datos Ingresados </h3><br> "+ nombre + "<br>" + apellido + "<br>" + fecha);
+            console.log(nombre);
+            console.log(apellido);
+            console.log(fecha);
+          })
+        })
+      </script>
     </div>
-    <p id="salida">
-    <script>
-      $(document).ready(function(){
-        $("button").click(function(){
-          var nombre = $('#Nombre').val();
-          var apellido = $('#Apellido').val();
-          var fecha = $('#datepicker').val();
-          $('#salida').append("<h3>Datos Ingresados </h3><br> "+ nombre + "<br>" + apellido + "<br>" + fecha);
-          console.log(nombre);
-          console.log(apellido);
-          console.log(fecha);
-          $('#button').empty();
-         })
-      })
-    </script>
+  </div>
 </body> 
 </html>
